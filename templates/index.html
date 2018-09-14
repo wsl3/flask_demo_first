@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block name %}
+首页
+{% endblock %}
+{% block style %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('static', filename='index.css')}}">
+{% endblock %}
+
+{% block page_content %}
+<div class="question-ul">
+    <ul>
+        {% for question in questions %}
+        <li>
+            <div class="question-title"><a href="{{url_for('details',question_id = question.id)}}">{{question.title}}</a></div>
+            <div class="question-content">{{question.content}}</div>
+            <div class="end">
+                <span>{{question.author.username}}</span>
+                <span>{{question.time}}</span>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

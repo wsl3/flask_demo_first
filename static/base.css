@@ -1,0 +1,8 @@
+.main{
+    margin:30px auto;
+    padding-bottom:30px;
+    display:flex;
+    justify-content:center;
+    width:800px;
+    background-color:#e7e7e7;
+}
